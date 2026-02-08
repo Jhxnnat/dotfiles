@@ -36,3 +36,4 @@ eval "$(pyenv virtualenv-init -)"
 # Cargo
 . "$HOME/.cargo/env"
 
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"

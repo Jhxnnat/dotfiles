@@ -20,6 +20,13 @@ cat .ssh/id_ecdsa.pub | wl-copy
 ```
 
 ```bash
+# chezmoi
+sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply Jhxnnat
+chezmoi diff
+chezmoi apply
+```
+
+```bash
 # cargo/rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
@@ -29,10 +36,9 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 curl -fsSL https://pyenv.run | bash
 ```
 
-```bash
-# chezmoi
-sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply Jhxnnat
-chezmoi diff
-chezmoi apply
+``` bash
+# brew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
+`
