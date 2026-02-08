@@ -3,14 +3,12 @@ files managed using [chezmoi](https://www.chezmoi.io/install/#one-line-package-i
 
 ```bash
 # Arch
-sudo pacman -Syu fish helix neovim zed niri mako fuzzel waybar wl-clipboard awww
+sudo pacman -Syu fish neovim emacs niri mako fuzzel waybar wl-clipboard awww syncthing
 ```
 
 ```bash
 # Fedora
-sudo dnf install fish helix neovim niri waybar wl-clipboard
-curl -f https://zed.dev/install.sh | sh
-# awww: https://codeberg.org/LGFae/awww
+sudo dnf install fish neovim emacs wl-clipboard syncthing
 ```
 
 ```bash
@@ -37,8 +35,11 @@ curl -fsSL https://pyenv.run | bash
 ```
 
 ``` bash
-# brew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+systemctl --user enable syncthing
+systemctl --user start syncthing
+# setup directories and so on
 ```
 
-`
+**Kmonad**
+- https://github.com/kmonad/kmonad/releases
+- https://github.com/kmonad/kmonad/blob/master/startup/kmonad%40.service
