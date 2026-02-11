@@ -32,23 +32,23 @@ window-rule {
 }
 
 // NewsFlash
-window-rule {
-    match app-id=r#"^io\.gitlab\.news_flash\.NewsFlash$"#
-	default-column-width { fixed 710; }
-}
+// window-rule {
+//     match app-id=r#"^io\.gitlab\.news_flash\.NewsFlash$"#
+// 	default-column-width { fixed 710; }
+// }
 
 // Nautilus / Files
 window-rule {
     match app-id=r#"^org\.gnome\.Nautilus$"#
-    // default-column-width { proportion 0.66667; }
-    default-column-width { fixed 727; }
+    default-column-width { proportion 0.66667; }
+    // default-column-width { fixed 727; }
 }
 
 // Gradia
-window-rule {
-    match app-id=r#"^be\.alexandervanhee\.gradia$"#
-    default-column-width { proportion 0.66667; }
-}
+// window-rule {
+//     match app-id=r#"^be\.alexandervanhee\.gradia$"#
+//     default-column-width { proportion 0.66667; }
+// }
 
 // Open Firefox maximized
 /- window-rule {
@@ -63,7 +63,7 @@ window-rule {
 }
 
 
-window-rule {
+/- window-rule {
 	match app-id=r#"^io\.lmms\.LMMS$"#
 	open-maximized-to-edges true
 }

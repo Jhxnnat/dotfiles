@@ -8,12 +8,12 @@ binds {
     // Mod+A hotkey-overlay-title="delta-shell toggle applauncher" { spawn-sh "delta-shell toggle applauncher"; }
     // Mod+S hotkey-overlay-title="delta-shell toggle quicksettings" { spawn-sh "delta-shell toggle quicksettings"; }
 	// Mod+A hotkey-overlay-title="noctalia launcher" { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
-	//    Mod+S hotkey-overlay-title="noctalia quicksettings" { spawn-sh "qs -c noctalia-shell ipc call controlCenter toggle"; }
+	// Mod+S hotkey-overlay-title="noctalia quicksettings" { spawn-sh "qs -c noctalia-shell ipc call controlCenter toggle"; }
     // Super+Alt+L hotkey-overlay-title="Lock the Screen: noctalia" { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
 	// Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
-	Super+Alt+L hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
-	Mod+A hotkey-overlay-title="Open vicinae" { spawn-sh "vicinae toggle"; }
-	Mod+Return hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
+	// Super+Alt+L hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
+	// Mod+A hotkey-overlay-title="Open vicinae" { spawn-sh "vicinae toggle"; }
+	Mod+Return hotkey-overlay-title="Open a Terminal: ptyxis" { spawn "ptyxis"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-"; }

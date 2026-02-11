@@ -1,8 +1,8 @@
 // https://yalter.github.io/niri/Configuration:-Introduction
-spawn-at-startup "waybar"
-spawn-at-startup "swaync"
-spawn-at-startup "awww-daemon"
-spawn-sh-at-startup "vicinae server"
+// spawn-at-startup "waybar"
+// spawn-at-startup "swaync"
+// spawn-at-startup "awww-daemon"
+// spawn-sh-at-startup "vicinae server"
 // spawn-sh-at-startup "delta-shell run"
 
 include "input.kdl"
