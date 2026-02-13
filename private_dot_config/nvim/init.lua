@@ -6,6 +6,14 @@ vim.pack.add {'https://github.com/nvim-telescope/telescope.nvim'}
 vim.pack.add {'https://github.com/nvim-tree/nvim-tree.lua'}
 vim.pack.add {'https://github.com/nvim-tree/nvim-web-devicons'}
 vim.pack.add {'https://github.com/akinsho/bufferline.nvim'}
+vim.pack.add {'https://github.com/windwp/nvim-autopairs'}
+vim.pack.add {'https://github.com/epwalsh/obsidian.nvim'}
+vim.pack.add {'https://github.com/hrsh7th/cmp-nvim-lsp'}
+vim.pack.add {'https://github.com/hrsh7th/cmp-buffer'}
+vim.pack.add {'https://github.com/hrsh7th/cmp-path'}
+vim.pack.add {'https://github.com/hrsh7th/cmp-cmdline'}
+vim.pack.add {'https://github.com/hrsh7th/nvim-cmp'}
+vim.pack.add {'https://github.com/goolord/alpha-nvim'}
 
 vim.lsp.config('rust-analyzer', {
 	cmd = {'rust-analyzer'},
@@ -14,6 +22,19 @@ vim.lsp.config('rust-analyzer', {
 vim.lsp.enable('rust-analyzer')
 vim.lsp.enable('pyright')
 vim.diagnostic.config({ virtual_text = true })
+
+require("alpha").setup(require("alpha.themes.dashboard").config)
+
+require("obsidian").setup({
+	workspaces = {
+		{
+			name = "Main",
+			path = "~/Documentos/Notes",
+		},
+	},
+})
+
+require("nvim-autopairs").setup {}
 
 require("oil").setup({
 	default_file_explorer = true,
@@ -48,6 +69,48 @@ require('bufferline').setup{
 	}
 }
 
+local cmp = require'cmp'
+
+cmp.setup({
+	snippet = {
+	  expand = function(args)
+		vim.snippet.expand(args.body) -- For native neovim snippets (Neovim v0.10+)
+	  end,
+	},
+	window = {
+	  -- completion = cmp.config.window.bordered(),
+	  -- documentation = cmp.config.window.bordered(),
+	},
+	mapping = cmp.mapping.preset.insert({
+	  ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+	  ['<C-f>'] = cmp.mapping.scroll_docs(4),
+	  ['<C-Space>'] = cmp.mapping.complete(),
+	  ['<C-e>'] = cmp.mapping.abort(),
+	  ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+	}),
+	sources = cmp.config.sources({
+	  { name = 'nvim_lsp' },
+	  { name = 'vsnip' },
+	}, {
+	  { name = 'buffer' },
+	})
+})
+
+cmp.setup.cmdline({ '/', '?' }, {
+	mapping = cmp.mapping.preset.cmdline(),
+	sources = {
+		{ name = 'buffer' }
+	}
+})
+
+cmp.setup.cmdline(':', {
+	mapping = cmp.mapping.preset.cmdline(),
+	sources = cmp.config.sources(
+		{{ name = 'path' }}, {{ name = 'cmdline' }}
+	),
+	matching = { disallow_symbol_nonprefix_matching = false }
+})
+
 local options = {
 	laststatus = 3,
     -- ruler = false, --disable extra numbering
@@ -76,7 +139,8 @@ local options = {
     smartcase = true, --but do not ignore if caps are used
     splitkeep = 'screen', --stablizie window open/close
 	signcolumn = "yes:1",
-	confirm = true
+	confirm = true,
+	conceallevel = 2
 }
 for k, v in pairs(options) do
 	vim.opt[k] = v
@@ -122,7 +186,7 @@ map("v", '<A-j>', ":m '>+1<CR>gv=gv", "move selection up")
 map("v", '<A-k>', ":m '<-2<CR>gv=gv", "move selection down")
 map('n', '<leader>h', '<CMD>noh<CR>', 'disable hightlighting')
 map("n", "<leader>x", "<cmd>!chmod +x %<CR>", "make a file executable")
-map("n", "<leader>W", ":set wrap!<CR>", "toggle wrap")
+--map("n", "<leader>W", ":set wrap!<CR>", "toggle wrap")
 map("n", "<leader>n", function()
 	if vim.wo.relativenumber then
 		vim.wo.relativenumber = false
@@ -135,6 +199,12 @@ map("n", "<C-down>", ":resize +2<CR>")
 map("n", "<C-up>", ":resize -2<CR>")
 map("n", "<C-left>", ":vertical resize -2<CR>")
 map("n", "<C-right>", ":vertical resize +2<CR>")
+
+-- anoying wrapping solution
+-- vim.fn("nnoremap <expr> k (v:count == 0 ? 'gk' : 'k')")
+-- vim.fn("nnoremap <expr> j (v:count == 0 ? 'gj' : 'j')")
+vim.api.nvim_set_keymap("n", "k", "v:count == 0 ? 'gk' : 'k'", { noremap = true, expr = true, silent = true })
+vim.api.nvim_set_keymap("n", "j", "v:count == 0 ? 'gj' : 'j'", { noremap = true, expr = true, silent = true })
 
 if vim.g.neovide then
 	vim.g.neovide_floating_corner_radius = 1.0
