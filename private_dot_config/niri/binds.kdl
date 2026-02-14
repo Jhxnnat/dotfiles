@@ -4,7 +4,7 @@ binds {
     // shows a list of important hotkeys.
     Super+Shift+H { show-hotkey-overlay; }
 
-    // Mod+A hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
+    Mod+A hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
     // Mod+A hotkey-overlay-title="delta-shell toggle applauncher" { spawn-sh "delta-shell toggle applauncher"; }
     // Mod+S hotkey-overlay-title="delta-shell toggle quicksettings" { spawn-sh "delta-shell toggle quicksettings"; }
 	// Mod+A hotkey-overlay-title="noctalia launcher" { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }

@@ -186,7 +186,7 @@ map("v", '<A-j>', ":m '>+1<CR>gv=gv", "move selection up")
 map("v", '<A-k>', ":m '<-2<CR>gv=gv", "move selection down")
 map('n', '<leader>h', '<CMD>noh<CR>', 'disable hightlighting')
 map("n", "<leader>x", "<cmd>!chmod +x %<CR>", "make a file executable")
---map("n", "<leader>W", ":set wrap!<CR>", "toggle wrap")
+map("n", "<leader>W", ":set wrap!<CR>", "toggle wrap")
 map("n", "<leader>n", function()
 	if vim.wo.relativenumber then
 		vim.wo.relativenumber = false
