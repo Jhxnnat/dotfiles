@@ -1,45 +1,29 @@
 {
     "layer": "top",
-    "position": "top",
-    "height": 24,
-    "modules-left": ["niri/workspaces"],
-    "modules-right": ["privacy", "wireplumber", "network", "battery", "custom/notify", "clock"],
-	"niri/workspaces": { 
-		"format": "{icon}",
-		"format-icons": {
-			"1": " ",
-			"2": " ",
-			"3": " ",
-			"4": " ",
-			"5": " ",
-			"6": " ",
-			"7": " ",
-			"8": " ",
-			"9": " ",
-			"focused": "(   ) "
-		}
+    "position": "bottom",
+    "height": 32,
+    "modules-left": ["mpris"],
+    "modules-right": ["privacy", "wireplumber", "battery", "network", "clock"],
+
+	"mpris": {
+		"format": "{status_icon} {dynamic}",
+		"format-paused": "{status_icon} {dynamic}",
+		"player-icons": {
+			"default": "▶",
+			"mpv": "🎵"
+		},
+		"status-icons": {
+			"paused": "⏸"
+		},
+		"ignored-players": ["firefox"],
+		"dynamic-len": 50,
+		"dynamic-order": ["title", "artist"]
 	},
-    "tray": {
-        "spacing": 10
-    },
     "clock": {
  		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format": "{:%a %d %b, %I:%M %p}",
 		"timezone": "America/Bogota",
 		"locale": "es_CO.UTF-8"
-    },
-    "cpu": {
-        "format": "{usage:02}",
-        "interval": 2
-    },
-    "memory": {
-        "format": "{used:0.2f}",
-        "interval": 2
-    },
-    "temperature": {
-        "critical-threshold": 80,
-        "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "", ""]
     },
     "idle_inhibitor": {
         "format": "{icon}",
@@ -54,7 +38,7 @@
             "critical": 20
         },
         "interval": 10,
-        "format": "{capacity:02}% <span size='12pt'>{icon}</span>",
+        "format": "bat: {capacity:02}%",
         "format-charging": "{capacity:02}",
         "format-icons": [" ", " ", " ", " ", " "],
 		"tooltip-format": "{capacity:02}% {power:0.1f}W"
@@ -67,10 +51,9 @@
         "interval": 5
     },
     "wireplumber": {
-        "format": "{volume}% <span size='12pt'>{icon}</span>",
-        "format-muted": "",
-        "format-bluetooth": "{volume}% 󰥰 ",
-        "format-muted": "{volume}%  ",
+        "format": "vol: {volume}%",
+        "format-muted": "--",
+        "format-bluetooth": "blt: {volume}",
         "format-icons": {
             "headphones": " ",
             "default": ["", " ", " "]
@@ -78,7 +61,7 @@
         // "on-click": "helvum",
     },
     "pulseaudio": {
-        "format": "{volume}% {icon}",
+        "format": "vol: {volume}%",
         "format-bluetooth": "{volume}% 󰥰 ",
         "format-muted": " ",
         "format-icons": {
@@ -100,19 +83,13 @@
 		]
 	},
 	"backlight": {
-		"format": "{percent}"
+		"format": "bl: {percent}%"
 	},
 	"custom/sep": {
 		"format": "/"
 	},
 	"custom/search": {
-		"format": " "
-	},
-	"custom/controlcenter": {
-		"format": "󰨚 "
-	},
-	"custom/notify": {
-		"format": "<span size='12pt'> </span>",
-		"on-click": "swaync-client -t"
+		"format": " ",
+		"on-click": "fuzzel"
 	}
 }

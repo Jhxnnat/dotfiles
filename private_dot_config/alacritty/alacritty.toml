@@ -1,5 +1,7 @@
-[window]
-decorations = "None"
+[general]
+import = [
+	"~/.config/alacritty/themes/themes/alabaster_dark.toml"
+]
 
 [colors.primary]
 background = "#000000"
@@ -24,13 +26,26 @@ style = "Italic"
 family = "Iosevka NF"
 style = "Regular"
 
+# [window]
+# decorations = "None"
+# opacity = 0.7
+
 [scrolling]
-history = 5000
-multiplier = 3
+history = 3023
 
-# [terminal]
-# [terminal.shell]
-# program = "/bin/zsh"
+[mouse]
+hide_when_typing = true
 
-[env]
-TERM = "xterm-256color"
+[selection]
+save_to_clipboard = false
+
+[keyboard]
+bindings = [
+  { key = "C",       mods = "Control|Shift", action = "Copy"  },
+  { key = "V",       mods = "Control|Shift", action = "Paste" },
+  { key = "N",       mods = "Control|Shift", action = "SpawnNewInstance" },
+  { key = "Equals",  mods = "Control|Shift", action = "IncreaseFontSize" },
+  { key = "Minus",   mods = "Control",       action = "DecreaseFontSize" },
+  { key = "Key0",    mods = "Control",       action = "ResetFontSize"    },
+  { key = "Enter",   mods = "Shift",         chars = "\n" },
+]

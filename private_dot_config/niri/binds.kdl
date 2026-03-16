@@ -4,7 +4,8 @@ binds {
     // shows a list of important hotkeys.
     Super+Shift+H { show-hotkey-overlay; }
 
-    Mod+A hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
+    Mod+A hotkey-overlay-title="Run an Application: rofi" { spawn-sh "rofi -show drun"; }
+	Super+W hotkey-overlay-title="List windows rofi" { spawn-sh "rofi -show window"; }
     // Mod+A hotkey-overlay-title="delta-shell toggle applauncher" { spawn-sh "delta-shell toggle applauncher"; }
     // Mod+S hotkey-overlay-title="delta-shell toggle quicksettings" { spawn-sh "delta-shell toggle quicksettings"; }
 	// Mod+A hotkey-overlay-title="noctalia launcher" { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
@@ -13,7 +14,7 @@ binds {
 	// Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
 	// Super+Alt+L hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
 	// Mod+A hotkey-overlay-title="Open vicinae" { spawn-sh "vicinae toggle"; }
-	Mod+Return hotkey-overlay-title="Open a Terminal: ptyxis" { spawn "ptyxis"; }
+	Mod+Return hotkey-overlay-title="Open a Terminal: Alacritty" { spawn "alacritty"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-"; }
@@ -182,9 +183,9 @@ binds {
     Mod+BracketRight { consume-or-expel-window-right; }
 
     // Consume one window from the right to the bottom of the focused column.
-    Mod+Comma  { consume-window-into-column; }
+    Super+Comma  { consume-window-into-column; }
     // Expel the bottom window from the focused column to the right.
-    Mod+Period { expel-window-from-column; }
+    Super+Period { expel-window-from-column; }
 
     Mod+R { switch-preset-column-width; }
     // Cycling through the presets in reverse order is also possible.
@@ -225,7 +226,7 @@ binds {
     // Toggle tabbed column display mode.
     // Windows in this column will appear as vertical tabs,
     // rather than stacked on top of each other.
-    Mod+W { toggle-column-tabbed-display; }
+    Mod+Shift+W { toggle-column-tabbed-display; }
 
     // Actions to switch layouts.
     // Note: if you uncomment these, make sure you do NOT have

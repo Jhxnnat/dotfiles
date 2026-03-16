@@ -18,3 +18,7 @@ function fish_prompt
 
     string join '' -- (set_color --bold green) (prompt_pwd) (set_color normal) (fish_git_prompt) $stat ' > '
 end
+
+# starship prompt
+starship init fish | source
+

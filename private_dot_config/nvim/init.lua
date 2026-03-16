@@ -20,7 +20,7 @@ vim.lsp.config('rust-analyzer', {
 	filetypes = {'rust'},
 })
 vim.lsp.enable('rust-analyzer')
-vim.lsp.enable('pyright')
+-- vim.lsp.enable('pyright')
 vim.diagnostic.config({ virtual_text = true })
 
 require("alpha").setup(require("alpha.themes.dashboard").config)

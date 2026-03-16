@@ -90,9 +90,9 @@ layout {
         // off
 		on
 
-        width 2
-        active-color "#999999"
-        inactive-color "#777777"
+        width 1
+        active-color "#555555"
+        inactive-color "#444444"
 
         // Color of the border around windows that request your attention.
         urgent-color "#9b0000"
@@ -107,7 +107,7 @@ layout {
     // You can enable drop shadows for windows.
     shadow {
         // Uncomment the next line to enable shadows.
-        // on
+        on
 
         // By default, the shadow draws only around its window, and not behind it.
         // Uncomment this setting to make the shadow draw behind its window.
@@ -132,7 +132,7 @@ layout {
         softness 20
 
         // Spread expands the shadow.
-        spread 4
+        spread 2
 
         // Offset moves the shadow relative to the window.
         offset x=0 y=5

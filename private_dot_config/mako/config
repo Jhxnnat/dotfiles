@@ -1,8 +1,8 @@
-font=Iosevka NF 11
+font=Iosevka NF 14
 
-background-color=#000000FF
+background-color=#000000CC
 
 border-size=1
 border-color=#484848FF
-border-radius=13
+border-radius=6
 

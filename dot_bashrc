@@ -25,6 +25,9 @@ if [ -d "$HOME/bin" ]; then
 	PATH="$HOME/bin:$PATH"
 fi
 
+if [ -d "/opt/riscv/bin/" ]; then
+	PATH="/opt/riscv/bin:$PATH"
+fi
 
 # Pyenv
 export PYENV_ROOT="$HOME/.pyenv"
@@ -37,3 +40,7 @@ eval "$(pyenv virtualenv-init -)"
 . "$HOME/.cargo/env"
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"
+
+# starship
+eval "$(starship init bash)"
+
