@@ -1,0 +1,12 @@
+[Unit]
+Description=KMonad keybaord config
+
+[Service]
+Restart=always
+RestartSec=3
+ExecStart=bash /etc/kmonad/kmonad_script_external.sh
+Nice=-20
+
+[Install]
+DefaultInstance=config
+WantedBy=default.target
