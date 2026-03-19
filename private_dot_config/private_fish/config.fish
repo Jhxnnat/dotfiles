@@ -20,5 +20,5 @@ function fish_prompt
 end
 
 # starship prompt
-starship init fish | source
+# starship init fish | source
 
