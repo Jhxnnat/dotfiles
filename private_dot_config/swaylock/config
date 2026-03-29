@@ -1,15 +1,10 @@
 ignore-empty-password
-
 font=Iosevka NF
-
 color=000000
 line-color=282828
 ring-color=000000
-
+image=/home/jhonatan/Imágenes/wallpapers/The_Artists_Garden_at_Eragny Blured.png
 fade-in=0.2
-
 show-keyboard-layout
-
 indicator-thickness=6
-
 # end

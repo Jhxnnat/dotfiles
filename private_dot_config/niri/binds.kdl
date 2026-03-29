@@ -11,7 +11,7 @@ binds {
 	// Mod+A hotkey-overlay-title="noctalia launcher" { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
 	// Mod+S hotkey-overlay-title="noctalia quicksettings" { spawn-sh "qs -c noctalia-shell ipc call controlCenter toggle"; }
     // Super+Alt+L hotkey-overlay-title="Lock the Screen: noctalia" { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
-	// Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
+	Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
 	// Super+Alt+L hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
 	// Mod+A hotkey-overlay-title="Open vicinae" { spawn-sh "vicinae toggle"; }
 	Mod+Return hotkey-overlay-title="Open a Terminal: Alacritty" { spawn "alacritty"; }
@@ -21,8 +21,8 @@ binds {
     XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
     XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
 
-    XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+10%"; }
-    XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
+    XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+6%"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "6%-"; }
 
 	XF86AudioPlay allow-when-locked=true { spawn-sh "playerctl play-pause"; }
     XF86AudioStop allow-when-locked=true { spawn-sh "playerctl stop"; }

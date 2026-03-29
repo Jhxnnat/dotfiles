@@ -1,10 +1,21 @@
 {
     "layer": "top",
-    "position": "bottom",
+    "position": "top",
     "height": 32,
-    "modules-left": ["mpris"],
-    "modules-right": ["privacy", "wireplumber", "battery", "network", "clock"],
+    "modules-left": ["niri/window"],
+    "modules-right": ["mpris", "custom/appmenu", "privacy", "wireplumber", "battery", "network", "clock"],
 
+	"niri/window": {
+		"format": "{app_id}",
+		"rewrite": {
+			"(.*)Cine": "Cine",
+			"(.*)obsidian": "Obsidian",
+			"(.*)Lollypop": "Lollypop",
+			"(.*)Tuba": "Tuba",
+			"(.*)planify": "Planify",
+			"(.*)firefox": "Firefox"
+		}
+	},
 	"mpris": {
 		"format": "{status_icon} {dynamic}",
 		"format-paused": "{status_icon} {dynamic}",
@@ -13,6 +24,7 @@
 			"mpv": "🎵"
 		},
 		"status-icons": {
+			"playing": "  ",
 			"paused": "⏸"
 		},
 		"ignored-players": ["firefox"],
@@ -21,7 +33,7 @@
 	},
     "clock": {
  		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format": "{:%a %d %b, %I:%M %p}",
+        "format": "{:%a %d %b  %I:%M %p}",
 		"timezone": "America/Bogota",
 		"locale": "es_CO.UTF-8"
     },
@@ -38,9 +50,10 @@
             "critical": 20
         },
         "interval": 10,
-        "format": "bat: {capacity:02}%",
-        "format-charging": "{capacity:02}",
+        "format": "{icon}",
+        "format-charging": " ",
         "format-icons": [" ", " ", " ", " ", " "],
+        // "format-icons": ["󰁺", "󰁼", "󰁾", "󰂀", "󰁹"],
 		"tooltip-format": "{capacity:02}% {power:0.1f}W"
     },
     "network": {
@@ -51,13 +64,14 @@
         "interval": 5
     },
     "wireplumber": {
-        "format": "vol: {volume}%",
-        "format-muted": "--",
-        "format-bluetooth": "blt: {volume}",
+        "format": "{icon}",
+        "format-muted": " ",
+        "format-bluetooth": "󰥰 ",
         "format-icons": {
             "headphones": " ",
-            "default": ["", " ", " "]
-        }
+            "default": [" ", " "]
+        },
+		"tooltip-format": "vol: {volume}%"
         // "on-click": "helvum",
     },
     "pulseaudio": {
@@ -85,11 +99,11 @@
 	"backlight": {
 		"format": "bl: {percent}%"
 	},
-	"custom/sep": {
-		"format": "/"
+	"custom/logo": {
+		"format": " "
 	},
-	"custom/search": {
+	"custom/appmenu": {
 		"format": " ",
-		"on-click": "fuzzel"
+		"on-click": "rofi -show drun"
 	}
 }
