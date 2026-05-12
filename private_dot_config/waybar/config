@@ -2,8 +2,8 @@
     "layer": "top",
     "position": "top",
     "height": 32,
-    "modules-left": ["niri/window"],
-    "modules-right": ["mpris", "custom/appmenu", "privacy", "wireplumber", "battery", "network", "clock"],
+    "modules-left": ["niri/window", "mpris"],
+    "modules-right": ["privacy", "cpu", "memory", "temperature", "wireplumber", "backlight", "battery", "network", "clock"],
 
 	"niri/window": {
 		"format": "{app_id}",
@@ -13,6 +13,9 @@
 			"(.*)Lollypop": "Lollypop",
 			"(.*)Tuba": "Tuba",
 			"(.*)planify": "Planify",
+			"(.*)Nocturne": "Nocturne",
+			"(.*)Nautilus": "Nautilus",
+			"(.*)Loupe": "Loupe",
 			"(.*)firefox": "Firefox"
 		}
 	},
@@ -40,39 +43,56 @@
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
-            "activated": "",
-            "deactivated": ""
+            "activated": "󰅶 ",
+            "deactivated": "󰾪 "
         }
+    },
+	"cpu": {
+        "format": "  {usage:02}",
+        "interval": 2
+    },
+    "memory": {
+        "format": "  {used:0.2f}",
+        "interval": 2
+    },
+    "temperature": {
+        "thermal-zone": 0,
+        "hwmon-path": "/sys/class/hwmon/hwmon6/temp1_input",
+		"interval": 2,
+        "critical-threshold": 80,
+        "format": "{icon} {temperatureC}°C",
+        "format-icons": [""]
+    },
+    "backlight": {
+        "format": "{icon} {percent}%",
+        "format-icons": [" "]
     },
     "battery": {
         "states": {
-            "warning": 30,
-            "critical": 20
+			"good": 75,
+            "warning": 20,
+            "critical": 10
         },
         "interval": 10,
-        "format": "{icon}",
+        "format": "{icon} {capacity:02}% | {power:0.1f}W",
         "format-charging": " ",
-        "format-icons": [" ", " ", " ", " ", " "],
-        // "format-icons": ["󰁺", "󰁼", "󰁾", "󰂀", "󰁹"],
+        "format-icons": ["󰁺", "󰁼", "󰁾", "󰂀", "󰁹"],
 		"tooltip-format": "{capacity:02}% {power:0.1f}W"
     },
-    "network": {
-		"tooltip-format": "{essid} {signaldBm}",
-        "format-wifi": "<span size='12pt'> </span>",
-        "format-ethernet": "<span size='12pt'>⇌ </span>",
-        "format-disconnected": "<span size='12pt'>󰖪 </span>",
+	"network": {
+        "format-wifi": "  {essid} {signaldBm}",
+        "format-ethernet": "⇌  {ifname}: {ipaddr}",
+        "format-disconnected": "⚠  Disconnected",
+		// "on-click": "/sbin/networkmanager_dmenu",
         "interval": 5
     },
     "wireplumber": {
-        "format": "{icon}",
+        "format": "{icon} {volume:02}%",
         "format-muted": " ",
-        "format-bluetooth": "󰥰 ",
         "format-icons": {
             "headphones": " ",
-            "default": [" ", " "]
-        },
-		"tooltip-format": "vol: {volume}%"
-        // "on-click": "helvum",
+            "default": [" "]
+        }
     },
     "pulseaudio": {
         "format": "vol: {volume}%",
@@ -95,15 +115,5 @@
 				"type": "audio-in"
 			}
 		]
-	},
-	"backlight": {
-		"format": "bl: {percent}%"
-	},
-	"custom/logo": {
-		"format": " "
-	},
-	"custom/appmenu": {
-		"format": " ",
-		"on-click": "rofi -show drun"
 	}
 }

@@ -1,7 +1,7 @@
 // https://yalter.github.io/niri/Configuration:-Window-Rules
 
 window-rule {
-    geometry-corner-radius 6
+    geometry-corner-radius 13
     clip-to-geometry true
 }
 
@@ -12,7 +12,7 @@ layer-rule {
 }
 
 // Transparent Alacritty
-window-rule {
+/- window-rule {
 	match app-id="Alacritty"
 	opacity 0.8
 }
@@ -21,11 +21,11 @@ window-rule {
 window-rule {
     match app-id=r#"^de\.schmidhuberj\.Flare$"#
     match app-id=r#"^org\.gnome\.World\.Secrets$"#
-    match app-id=r#"^org\.gnome\.Podcasts$"#
+    // match app-id=r#"^org\.gnome\.Podcasts$"#
     match app-id=r#"^io\.bassi\.Amberol$"#
-    match app-id=r#"^dev\.geopjr\.Tuba$"#
+    // match app-id=r#"^dev\.geopjr\.Tuba$"#
     match app-id=r#"^com\.github\.neithern\.g4music$"#
-    match app-id=r#"^io\.github\.alainm23\.planify$"#
+    // match app-id=r#"^io\.github\.alainm23\.planify$"#
     default-column-width { proportion 0.33333; }
 }
 
@@ -74,7 +74,6 @@ window-rule {
 }
 
 // block out Secrets from screen capture.
-// (This example rule is commented out with a "/-" in front.)
 window-rule {
     match app-id=r#"^org\.gnome\.World\.Secrets$"#
     block-out-from "screen-capture"
@@ -84,7 +83,6 @@ window-rule {
 window-rule {
     match app-id=r#"^net\.sourceforge\.VMPK$"#
     open-floating true
-    default-column-width { fixed 1290; }
 }
 
 window-rule {
@@ -96,3 +94,39 @@ window-rule {
 	match app-id=r#"^me\.jhx\.anotado$"#
 	open-floating true
 }
+
+blur {
+	// off
+	passes 5
+	offset 5
+	noise 0.02
+	saturation 1.6
+}
+
+// blur stuff behind Alacritty
+// window-rule {
+//     match app-id="^Alacritty$"
+//
+//     background-effect {
+//         blur true
+//     }
+// }
+//
+// // blur behind fuzzel
+// layer-rule {
+//     match namespace="^rofi$"
+//
+//     background-effect {
+//         blur true
+//     }
+// }
+
+
+// waybar blur
+// layer-rule {
+//     match namespace="^waybar$"
+//
+//     background-effect {
+//         blur true
+//     }
+// }

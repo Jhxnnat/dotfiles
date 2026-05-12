@@ -15,12 +15,14 @@ vim.pack.add {'https://github.com/hrsh7th/cmp-cmdline'}
 vim.pack.add {'https://github.com/hrsh7th/nvim-cmp'}
 vim.pack.add {'https://github.com/goolord/alpha-nvim'}
 
+-- vim.pack.update()
+
 vim.lsp.config('rust-analyzer', {
 	cmd = {'rust-analyzer'},
 	filetypes = {'rust'},
 })
 vim.lsp.enable('rust-analyzer')
--- vim.lsp.enable('pyright')
+
 vim.diagnostic.config({ virtual_text = true })
 
 require("alpha").setup(require("alpha.themes.dashboard").config)
@@ -118,7 +120,7 @@ local options = {
     -- showcmd = false,
     wrap = true, -- bound to leader-W
     mouse = "a", --enable mouse
-    -- clipboard = "unnamedplus", -- system clipboard
+    clipboard = "unnamedplus", -- system clipboard
     history = 100, --command line history
     swapfile = false, --swap just gets in the way, usually
     backup = false,
@@ -127,7 +129,7 @@ local options = {
     ttyfast = true, --faster scrolling
     smoothscroll = true,
     number = true, --numbering lines
-    -- relativenumber = true, --toggle bound to leader nn
+    -- relativenumber = true, --toggle bound to leader-n
     numberwidth = 5,
     smarttab = true, --indentation stuff
     cindent = true,
@@ -145,16 +147,6 @@ local options = {
 for k, v in pairs(options) do
 	vim.opt[k] = v
 end
-
-vim.cmd.colorscheme("lunaperche")
-vim.cmd [[
-	highlight Normal guibg=none
-	highlight NonText guibg=none
-	highlight Normal ctermbg=none
-	highlight NonText ctermbg=none
-	highlight LineNr guibg='#383838'
-	highlight SignColumn guibg='#383838'
-]]
 
 local function map(m, k, v, d)
 	vim.keymap.set(m, k, v, { desc = d, noremap = true, silent = true })
@@ -205,6 +197,8 @@ map("n", "<C-right>", ":vertical resize +2<CR>")
 -- vim.fn("nnoremap <expr> j (v:count == 0 ? 'gj' : 'j')")
 vim.api.nvim_set_keymap("n", "k", "v:count == 0 ? 'gk' : 'k'", { noremap = true, expr = true, silent = true })
 vim.api.nvim_set_keymap("n", "j", "v:count == 0 ? 'gj' : 'j'", { noremap = true, expr = true, silent = true })
+
+vim.cmd.colorscheme("lunaperche")
 
 if vim.g.neovide then
 	vim.g.neovide_floating_corner_radius = 1.0
