@@ -1,14 +1,14 @@
-Computer configurations files in case of emergency, or os reinstall...
-files managed using [chezmoi](https://www.chezmoi.io/install/#one-line-package-install)
+Computer configurations files in case of emergency, or reinstall...
+Managed using [chezmoi](https://www.chezmoi.io/install/#one-line-package-install)
 
 ```bash
-# Arch
-sudo pacman -Syu fish neovim emacs niri mako fuzzel waybar wl-clipboard awww syncthing
+# Arch | Zaza | 300E4C
+sudo pacman -Syu vim fish helix emacs niri mako rofi waybar wl-clipboard awww syncthing
 ```
 
 ```bash
-# Fedora
-sudo dnf install fish neovim emacs wl-clipboard syncthing
+# Fedora | Garmond | 15IRH10
+sudo dnf install vim fish helix wl-clipboard syncthing
 ```
 
 ```bash
@@ -40,6 +40,9 @@ systemctl --user start syncthing
 # setup directories and so on
 ```
 
-**Kmonad**
+**Build Neovim:**
+- https://github.com/neovim/neovim/blob/master/BUILD.md
+
+**Kmonad:**
 - https://github.com/kmonad/kmonad/releases
 - https://github.com/kmonad/kmonad/blob/master/startup/kmonad%40.service
