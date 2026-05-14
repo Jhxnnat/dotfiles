@@ -11,6 +11,7 @@ alias ll='ls -l --color=auto'
 alias la='ls -A --color=auto'
 alias grep='grep --color=auto'
 alias f='exec fish'
+alias zed='flatpak run dev.zed.Zed'
 
 export EDITOR="nvim"
 
@@ -25,6 +26,11 @@ if [ -d "$HOME/bin" ]; then
 	PATH="$HOME/bin:$PATH"
 fi
 
+if [ -d "$HOME/.bin" ]; then
+	PATH="$HOME/.bin:$PATH"
+fi
+
+# old stuff from that time I compiled a toolchain and ran out of memory
 if [ -d "/opt/riscv/bin/" ]; then
 	PATH="/opt/riscv/bin:$PATH"
 fi
@@ -35,16 +41,14 @@ export PYENV_ROOT="$HOME/.pyenv"
 eval "$(pyenv init - bash)"
 eval "$(pyenv virtualenv-init -)"
 
-
 # Cargo
 . "$HOME/.cargo/env"
 
+# homebrew
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"
 
-# starship
-# eval "$(starship init bash)"
-
-
+# nvm shit that only works in bash :(
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+

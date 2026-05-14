@@ -1,19 +1,20 @@
-vim.pack.add {'https://github.com/neovim/nvim-lspconfig'}
-vim.pack.add {'https://github.com/stevearc/oil.nvim'}
-vim.pack.add {'https://github.com/folke/which-key.nvim'}
-vim.pack.add {'https://github.com/nvim-lua/plenary.nvim'}
-vim.pack.add {'https://github.com/nvim-telescope/telescope.nvim'}
-vim.pack.add {'https://github.com/nvim-tree/nvim-tree.lua'}
-vim.pack.add {'https://github.com/nvim-tree/nvim-web-devicons'}
-vim.pack.add {'https://github.com/akinsho/bufferline.nvim'}
-vim.pack.add {'https://github.com/windwp/nvim-autopairs'}
-vim.pack.add {'https://github.com/epwalsh/obsidian.nvim'}
-vim.pack.add {'https://github.com/hrsh7th/cmp-nvim-lsp'}
-vim.pack.add {'https://github.com/hrsh7th/cmp-buffer'}
-vim.pack.add {'https://github.com/hrsh7th/cmp-path'}
-vim.pack.add {'https://github.com/hrsh7th/cmp-cmdline'}
-vim.pack.add {'https://github.com/hrsh7th/nvim-cmp'}
-vim.pack.add {'https://github.com/goolord/alpha-nvim'}
+vim.pack.add({
+	'https://github.com/neovim/nvim-lspconfig',
+	'https://github.com/stevearc/oil.nvim',
+	'https://github.com/folke/which-key.nvim',
+	'https://github.com/nvim-lua/plenary.nvim',
+	'https://github.com/nvim-telescope/telescope.nvim',
+	'https://github.com/nvim-tree/nvim-tree.lua',
+	'https://github.com/nvim-tree/nvim-web-devicons',
+	'https://github.com/akinsho/bufferline.nvim',
+	'https://github.com/windwp/nvim-autopairs',
+	'https://github.com/hrsh7th/cmp-nvim-lsp',
+	'https://github.com/hrsh7th/cmp-buffer',
+	'https://github.com/hrsh7th/cmp-path',
+	'https://github.com/hrsh7th/cmp-cmdline',
+	'https://github.com/hrsh7th/nvim-cmp',
+	'https://github.com/goolord/alpha-nvim',
+})
 
 -- vim.pack.update()
 
@@ -26,18 +27,7 @@ vim.lsp.enable('rust-analyzer')
 vim.diagnostic.config({ virtual_text = true })
 
 require("alpha").setup(require("alpha.themes.dashboard").config)
-
-require("obsidian").setup({
-	workspaces = {
-		{
-			name = "Main",
-			path = "~/Documentos/Notes",
-		},
-	},
-})
-
 require("nvim-autopairs").setup {}
-
 require("oil").setup({
 	default_file_explorer = true,
 	columns = { "icon", "permissions", "size", "mtime", },
@@ -52,7 +42,6 @@ require("oil").setup({
 		},
 	}
 })
-
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 require("nvim-tree").setup({
@@ -60,7 +49,6 @@ require("nvim-tree").setup({
 		dotfiles = true,
 	},
 })
-
 require('bufferline').setup{
 	options = {
 		offsets = {
@@ -70,9 +58,7 @@ require('bufferline').setup{
 		}
 	}
 }
-
 local cmp = require'cmp'
-
 cmp.setup({
 	snippet = {
 	  expand = function(args)
@@ -97,14 +83,12 @@ cmp.setup({
 	  { name = 'buffer' },
 	})
 })
-
 cmp.setup.cmdline({ '/', '?' }, {
 	mapping = cmp.mapping.preset.cmdline(),
 	sources = {
 		{ name = 'buffer' }
 	}
 })
-
 cmp.setup.cmdline(':', {
 	mapping = cmp.mapping.preset.cmdline(),
 	sources = cmp.config.sources(
@@ -115,34 +99,31 @@ cmp.setup.cmdline(':', {
 
 local options = {
 	laststatus = 3,
-    -- ruler = false, --disable extra numbering
-    -- showmode = false, --not needed due to lualine
-    -- showcmd = false,
-    wrap = true, -- bound to leader-W
-    mouse = "a", --enable mouse
-    clipboard = "unnamedplus", -- system clipboard
-    history = 100, --command line history
-    swapfile = false, --swap just gets in the way, usually
-    backup = false,
-    undofile = true, --undos are saved to file
-    cursorline = false,
-    ttyfast = true, --faster scrolling
-    smoothscroll = true,
-    number = true, --numbering lines
-    -- relativenumber = true, --toggle bound to leader-n
-    numberwidth = 5,
-    smarttab = true, --indentation stuff
-    cindent = true,
-    autoindent = false,
-    tabstop = 4, --visual width of tab
+	showmode = false, --not needed due to lualine
+	showcmd = false,
+	wrap = true, -- bound to leader-W
+	mouse = "a", --enable mouse
+	clipboard = "unnamedplus", -- system clipboard
+	history = 100, --command line history
+	swapfile = false, --swap just gets in the way, usually
+	backup = false,
+	undofile = true, --undos are saved to file
+	cursorline = false,
+	ttyfast = true, --faster scrolling
+	smoothscroll = true,
+	relativenumber = true, --toggle bound to leader-n
+	numberwidth = 5,
+	smarttab = true, --indentation stuff
+	cindent = true,
+	autoindent = false,
+	tabstop = 4, --visual width of tab
 	shiftwidth = 4,
-    termguicolors = true,
-    ignorecase = true, --ignore case while searching
-    smartcase = true, --but do not ignore if caps are used
-    splitkeep = 'screen', --stablizie window open/close
+	termguicolors = true,
+	ignorecase = true, --ignore case while searching
+	smartcase = true, --but do not ignore if caps are used
+	splitkeep = 'screen', --stablizie window open/close
 	signcolumn = "yes:1",
 	confirm = true,
-	conceallevel = 2
 }
 for k, v in pairs(options) do
 	vim.opt[k] = v
@@ -201,7 +182,7 @@ vim.api.nvim_set_keymap("n", "j", "v:count == 0 ? 'gj' : 'j'", { noremap = true,
 vim.cmd.colorscheme("lunaperche")
 
 if vim.g.neovide then
-	vim.g.neovide_floating_corner_radius = 1.0
+	-- vim.g.neovide_floating_corner_radius = 1.0
 	vim.api.nvim_set_keymap("n", "<C-+>", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.1<CR>", { silent = true })
 	vim.api.nvim_set_keymap("n", "<C-->", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.1<CR>", { silent = true })
 	vim.api.nvim_set_keymap("n", "<C-0>", ":lua vim.g.neovide_scale_factor = 1<CR>", { silent = true })

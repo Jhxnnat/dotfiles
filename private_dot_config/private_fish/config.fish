@@ -8,6 +8,8 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
+alias zed="flatpak run dev.zed.Zed"
+
 function fish_prompt
     set -l last_status $status
     # Prompt status only if it's not 0
@@ -18,7 +20,4 @@ function fish_prompt
 
     string join '' -- (set_color --bold green) (prompt_pwd) (set_color normal) (fish_git_prompt) $stat ' > '
 end
-
-# starship prompt
-# starship init fish | source
 

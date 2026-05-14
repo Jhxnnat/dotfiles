@@ -1,4 +1,4 @@
-// spawn-at-startup "waybar"
+spawn-at-startup "waybar"
 spawn-at-startup "awww-daemon"
 // spawn-at-startup "swaync"
 // spawn-sh-at-startup "vicinae server"
