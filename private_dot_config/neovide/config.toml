@@ -1,0 +1,6 @@
+fork = true
+# frame = "none"
+
+[font]
+normal = ["Iosevka NF"]
+size = 14
