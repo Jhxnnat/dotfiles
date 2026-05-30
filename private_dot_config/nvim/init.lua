@@ -188,3 +188,30 @@ if vim.g.neovide then
 	vim.api.nvim_set_keymap("n", "<C-0>", ":lua vim.g.neovide_scale_factor = 1<CR>", { silent = true })
 end
 
+
+-- GNvim setup ---
+local api = vim.api
+-- Only setup gnvim when it attaches.
+api.nvim_create_autocmd({'UIEnter'}, {
+  callback = function(event)
+	local chanid = vim.v.event['chan']
+	local chan = vim.api.nvim_get_chan_info(chanid)
+	if chan.client and chan.client.name ~= 'gnvim' then
+	  return
+	end
+
+	local gnvim = require('gnvim')
+
+	vim.opt.guifont = 'Iosevka NF 14'
+
+	vim.keymap.set('n', '<c-+>', function() gnvim.font_size(1) end)
+	vim.keymap.set('n', '<c-->', function() gnvim.font_size(-1) end)
+
+	gnvim.setup({
+		cursor = {
+			blink_transition = 300
+		}
+	})
+  end
+})
+

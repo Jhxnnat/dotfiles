@@ -2,9 +2,11 @@
     "layer": "top",
     "position": "top",
     "height": 32,
-    "modules-left": ["niri/window", "mpris"],
+    "modules-left": ["niri/workspaces", "mpris"],
     "modules-right": ["privacy", "cpu", "memory", "temperature", "wireplumber", "backlight", "battery", "network", "clock"],
-
+	"niri/workspaces": {
+		"format": "{value}"
+	},
 	"niri/window": {
 		"format": "{app_id}",
 		"rewrite": {

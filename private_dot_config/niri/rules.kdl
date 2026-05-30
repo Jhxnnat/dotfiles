@@ -18,9 +18,9 @@ layer-rule {
 }
 
 // Open Flare, Secrets, Tuba with less width
-window-rule {
+/- window-rule {
     match app-id=r#"^de\.schmidhuberj\.Flare$"#
-    match app-id=r#"^org\.gnome\.World\.Secrets$"#
+    // match app-id=r#"^org\.gnome\.World\.Secrets$"#
     // match app-id=r#"^org\.gnome\.Podcasts$"#
     match app-id=r#"^io\.bassi\.Amberol$"#
     // match app-id=r#"^dev\.geopjr\.Tuba$"#
@@ -123,10 +123,10 @@ blur {
 
 
 // waybar blur
-// layer-rule {
-//     match namespace="^waybar$"
-//
-//     background-effect {
-//         blur true
-//     }
-// }
+ layer-rule {
+     match namespace="^waybar$"
+
+     background-effect {
+         blur true
+     }
+ }
