@@ -47,6 +47,9 @@ eval "$(pyenv virtualenv-init -)"
 # Cargo
 . "$HOME/.cargo/env"
 
+# helix build
+export HELIX_RUNTIME=~/code/compiled/helix/runtime
+
 # homebrew
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"
 
