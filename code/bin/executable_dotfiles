@@ -1,0 +1,29 @@
+#!/bin/bash
+
+dots_path=~/.local/share/chezmoi
+
+function pull_apply ()
+{
+	git -C $dots_path pull --rebase
+	chezmoi apply
+}
+
+function add_push ()
+{
+	chezmoi re-add
+	git -C $dots_path add $dots_path
+	if [ -n "$(git -C $dots_path diff --name-only --cached)" ]; then
+		echo "commit msg: "
+		read message
+		git -C $dots_path commit -m "$message"
+		git -C $dots_path push
+	else
+		echo "No changes..."
+	fi
+}
+
+case "$1" in 
+	'pull') pull_apply;;
+	'push') add_push;;
+	*) echo "invalid command";;
+esac
