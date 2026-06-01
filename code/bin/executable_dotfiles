@@ -22,9 +22,15 @@ function add_push ()
 	fi
 }
 
+function print_help ()
+{
+	echo -e "Use push or pull"
+}
+
 case "$1" in 
 	'pull') pull_apply;;
 	'push') add_push;;
+	'help') print_help;;
 	*) echo "invalid command";;
 esac
 
