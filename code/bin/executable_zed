@@ -1,3 +1,3 @@
 #!/usr/bin/sh
 
-echo "not done..."
+flatpak run dev.zed.Zed $@
