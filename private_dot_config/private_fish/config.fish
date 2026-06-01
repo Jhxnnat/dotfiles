@@ -17,7 +17,11 @@ function fish_prompt
     if test $last_status -ne 0
         set stat (set_color red)" ($last_status)" (set_color normal)
     end
+	
+	set -l _prompt
+	set _prompt '
+# '
 
-    string join '' -- (set_color --bold green) (prompt_pwd) (set_color normal) (fish_git_prompt) $stat ' > '
+    string join '' -- (set_color --bold green) (prompt_pwd) (set_color normal) (fish_git_prompt) $stat (set_color --bold purple) $_prompt (set_color normal)
 end
 
