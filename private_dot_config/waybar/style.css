@@ -1,9 +1,9 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: "SF Pro", monospace;
+    font-family: "Inter", monospace;
     font-size: 14px;
-	color: black;
+	font-weight: 600;
 }
 
 window#waybar {
@@ -21,6 +21,7 @@ window#waybar {
 	padding-left: 4px;
 	padding-right: 4px;
 	margin-left: 3px;
+	color: black;
 }
 
 #backlight, #battery, #cpu, #memory,
@@ -31,6 +32,22 @@ window#waybar {
 	padding-right: 4px;
 	margin-left: 3px;
 	margin-right: 3px;
+	color: black;
+}
+
+#workspaces button {
+    padding: 0 10px;
+    background: transparent;
+	color: black;
+}
+
+#workspaces button.focused {
+    background-color: black;
+	color: white;
+}
+#workspaces button.active {
+    background-color: black;
+	color: white;
 }
 
 #privacy {
