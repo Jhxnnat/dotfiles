@@ -21,14 +21,15 @@
     urgent-background:           var(background);
     selected-normal-foreground:  var(lightbg);
     active-foreground:           var(blue);
-    background:                  #272245;
+    background:                  #181818AA;
     selected-active-background:  var(blue);
     active-background:           var(background);
     selected-normal-background:  var(normal-foreground);
     alternate-normal-background: var(lightbg);
-    foreground:                  #413D5A;
+    // foreground:                  #413D5ACC;
+    foreground:                  transparent;
     selected-urgent-foreground:  var(background);
-    normal-foreground:           #9D92E0;
+    normal-foreground:           #E4E4E4;
     alternate-urgent-foreground: var(normal-foreground);
     alternate-active-foreground: var(normal-foreground);
 }

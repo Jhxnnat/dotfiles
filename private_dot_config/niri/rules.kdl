@@ -130,3 +130,12 @@ blur {
          blur true
      }
  }
+
+ // rofi blur
+ layer-rule {
+     match namespace="^rofi$"
+
+     background-effect {
+         blur true
+     }
+ }
