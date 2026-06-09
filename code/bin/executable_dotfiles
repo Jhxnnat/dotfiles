@@ -10,7 +10,7 @@ function pull_apply ()
 
 function add_push ()
 {
-	chezmoi re-add
+	chezmoi add ~/code/bin
 	git -C $dots_path add $dots_path
 	if [ -n "$(git -C $dots_path diff --name-only --cached)" ]; then
 		echo "commit msg: "

@@ -1,0 +1,30 @@
+#!/bin/bash
+## cretits to casey connolly: https://github.com/kcxt/dotfiles/blob/main/bin/fastgnome
+
+PROC="gnome-shell"
+CLAMP=900
+
+PID=$(pidof "$PROC")
+
+function enable() {
+	echo "Setting uclamp min to 800 (max: 1024)"
+	uclampset --pid "$PID" -m "$CLAMP"
+
+	echo
+	echo "Done, Everything should be fast now"
+}
+
+function disable() {
+	echo "Setting uclamp min to 0"
+	uclampset --pid "$PID" -m 0
+
+	echo
+	echo "Done, all slow again"
+}
+
+if [ "$1" = "-d" ]; then
+	disable
+else
+	enable
+fi
+
