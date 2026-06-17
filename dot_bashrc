@@ -51,10 +51,9 @@ eval "$(pyenv virtualenv-init -)"
 export HELIX_RUNTIME=~/code/compiled/helix/runtime
 
 # homebrew
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"
+# eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"
 
 # nvm shit that only works in bash :(
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

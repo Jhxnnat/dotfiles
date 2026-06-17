@@ -2,13 +2,8 @@ Computer configurations files in case of emergency, or reinstall...
 Managed using [chezmoi](https://www.chezmoi.io/install/#one-line-package-install)
 
 ```bash
-# Arch | Zaza | 300E4C
-sudo pacman -Syu vim fish helix emacs niri mako rofi waybar wl-clipboard awww syncthing
-```
-
-```bash
-# Fedora | Garmond | 15IRH10
-sudo dnf install vim fish helix wl-clipboard syncthing
+# Arch | Garmond | 15IRH10
+pacman -Syu fish emacs-wayland niri mako rofi waybar wl-clipboard syncthing tailscale chezmoi
 ```
 
 ```bash
@@ -19,9 +14,7 @@ cat .ssh/id_ecdsa.pub | wl-copy
 
 ```bash
 # chezmoi
-sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply Jhxnnat
-chezmoi diff
-chezmoi apply
+chezmoi init --apply Jhxnnat
 ```
 
 ```bash
@@ -40,9 +33,15 @@ systemctl --user start syncthing
 # setup directories and so on
 ```
 
-**Build Neovim:**
-- https://github.com/neovim/neovim/blob/master/BUILD.md
+```bash
+systemctl enable --now tailscaled
+tailscale up
+```
 
 **Kmonad:**
 - https://github.com/kmonad/kmonad/releases
-- https://github.com/kmonad/kmonad/blob/master/startup/kmonad%40.service
+```bash
+./setup.sh
+systemctl enable --now kmonad.service
+systemctl daemon-reload
+```

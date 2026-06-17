@@ -8,5 +8,5 @@ ExecStart=bash /etc/kmonad/kmonad_script_external.sh
 Nice=-20
 
 [Install]
-DefaultInstance=config
+# DefaultInstance=config
 WantedBy=default.target
