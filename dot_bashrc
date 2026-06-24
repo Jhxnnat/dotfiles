@@ -33,27 +33,9 @@ if [ -d "$HOME/code/bin" ]; then
 	PATH="$HOME/code/bin:$PATH"
 fi
 
-# old stuff from that time I compiled a toolchain and ran out of memory
-if [ -d "/opt/riscv/bin/" ]; then
-	PATH="/opt/riscv/bin:$PATH"
-fi
-
-# Pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init - bash)"
-eval "$(pyenv virtualenv-init -)"
-
 # Cargo
-. "$HOME/.cargo/env"
+# . "$HOME/.cargo/env"
 
 # helix build
 export HELIX_RUNTIME=~/code/compiled/helix/runtime
 
-# homebrew
-# eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"
-
-# nvm shit that only works in bash :(
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

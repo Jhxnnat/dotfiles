@@ -2,8 +2,8 @@ Computer configurations files in case of emergency, or reinstall...
 Managed using [chezmoi](https://www.chezmoi.io/install/#one-line-package-install)
 
 ```bash
-# Arch | Garmond | 15IRH10
-pacman -Syu fish emacs-wayland niri mako rofi waybar wl-clipboard syncthing tailscale chezmoi
+# pmos/alpine | garmond | 15IRH10
+apk add fish wl-clipboard syncthing tailscale chezmoi
 ```
 
 ```bash
@@ -15,16 +15,6 @@ cat .ssh/id_ecdsa.pub | wl-copy
 ```bash
 # chezmoi
 chezmoi init --apply Jhxnnat
-```
-
-```bash
-# cargo/rust
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-```
-
-```bash
-# pyenv
-curl -fsSL https://pyenv.run | bash
 ```
 
 ``` bash
