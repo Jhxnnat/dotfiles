@@ -5,6 +5,15 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# prompt
+exitstatus()
+{
+    if [[ $? != 0 ]]; then
+        echo $?' '
+    fi
+}
+
+PS1='\e[1;32m\u@${HOSTNAME} \e[1;36m\w \e[1;31m$(exitstatus)\e[0m$ '
 
 alias ls='ls --color=auto'
 alias ll='ls -l --color=auto'
@@ -12,9 +21,7 @@ alias la='ls -A --color=auto'
 alias grep='grep --color=auto'
 alias f='exec fish'
 
-export EDITOR="nvim"
-
-PS1='[\w]\$ '
+export EDITOR="vim"
 
 # Path
 if [ -d "$HOME/.local/bin" ]; then
@@ -34,7 +41,9 @@ if [ -d "$HOME/code/bin" ]; then
 fi
 
 # Cargo
-# . "$HOME/.cargo/env"
+if [ -d ]; then
+	PATH="$HOME/.cargo/bin:$PATH"
+fi
 
 # helix build
 export HELIX_RUNTIME=~/code/compiled/helix/runtime

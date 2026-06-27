@@ -17,8 +17,7 @@ function fish_prompt
     end
 	
 	set -l _prompt
-	set _prompt '
-# '
+	set _prompt ' λ '
 
     string join '' -- (set_color --bold green) (prompt_pwd) (set_color normal) (fish_git_prompt) $stat (set_color --bold purple) $_prompt (set_color normal)
 end

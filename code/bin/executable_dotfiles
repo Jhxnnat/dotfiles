@@ -10,7 +10,7 @@ function pull_apply ()
 
 function add_push ()
 {
-	chezmoi add ~/code/bin
+	chezmoi re-add
 	git -C $dots_path add $dots_path
 	if [ -n "$(git -C $dots_path diff --name-only --cached)" ]; then
 		echo "commit msg: "
@@ -31,7 +31,9 @@ case "$1" in
 	'pull') pull_apply;;
 	'push') add_push;;
 	'help') print_help;;
-	*) echo "invalid command";;
+	*) 
+		echo "invalid command"
+		exit 1;;
 esac
 
 
