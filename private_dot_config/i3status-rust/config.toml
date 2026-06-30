@@ -1,0 +1,22 @@
+icons_format = "{icon}"
+
+[icons]
+icons = "awesome4"
+[icons.overrides]
+bat = ["|E|", "|_|", "|=|", "|F|"]
+bat_charging = "|^| "
+
+[[block]]
+block = "sound"
+[[block.click]]
+button = "left"
+# cmd = "pavucontrol"
+
+[[block]]
+block = "battery"
+
+
+[[block]]
+block = "time"
+interval = 5
+format = " $timestamp.datetime(f:' %d/%m %R') "
