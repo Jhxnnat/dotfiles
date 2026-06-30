@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 # selected=$(niri msg --json windows | jq '.[].title' | fuzzel --dmenu)
 # notify-send "$selected" -t 5000

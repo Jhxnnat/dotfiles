@@ -48,3 +48,4 @@ fi
 # helix build
 export HELIX_RUNTIME=~/code/compiled/helix/runtime
 
+. "$HOME/.cargo/env"

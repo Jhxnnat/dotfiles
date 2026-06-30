@@ -8,7 +8,7 @@ background = "#000000"
 foreground = "#eaeaea"
 
 [font]
-size = 14
+size = 12
 
 [font.bold]
 family = "Iosevka NF"
