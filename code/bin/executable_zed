@@ -1,3 +1,0 @@
-#!/usr/bin/sh
-
-/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=zed-wrapper --file-forwarding dev.zed.Zed @@u %U @@
