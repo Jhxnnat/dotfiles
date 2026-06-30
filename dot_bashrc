@@ -21,7 +21,7 @@ alias la='ls -A --color=auto'
 alias grep='grep --color=auto'
 alias f='exec fish'
 
-export EDITOR="vim"
+export EDITOR="evi"
 
 # Path
 if [ -d "$HOME/.local/bin" ]; then
