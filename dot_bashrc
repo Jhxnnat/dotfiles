@@ -12,7 +12,6 @@ exitstatus()
         echo $?' '
     fi
 }
-
 PS1='\e[1;32m\u@${HOSTNAME} \e[1;36m\w \e[1;31m$(exitstatus)\e[0m$ '
 
 alias ls='ls --color=auto'
