@@ -15,15 +15,24 @@
 		    :font "Iosevka NF"
 		    :height 120)
 
-;; (setq indent-tabs-mode t)
-(setq-default tab-width 4
-			  inhibit-splash-screen t)
+(setq-default indent-tabs-mode nil)
+(setq tab-stop-list nil)
+(setq-default tab-width 4)
+(setq-default inhibit-splash-screen t)
 
 (global-display-line-numbers-mode)
 
-;; cool shit
+;; cool shit (?
 (ido-mode 1)
 (ido-everywhere 1)
 
 (global-set-key (kbd "C-,") 'duplicate-line)
+
+;; org stuff
+(global-set-key (kbd "C-c l") #'org-store-link)
+(global-set-key (kbd "C-c a") #'org-agenda)
+(global-set-key (kbd "C-c c") #'org-capture)
+
+;;(set-frame-name "Emacs at Garmond")
+(setq-default frame-title-format (concat "%b - Emacs at " system-name))
 
