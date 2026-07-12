@@ -1,8 +1,5 @@
-spawn-at-startup "waybar"
+spawn-at-startup "quickshell"
 spawn-at-startup "awww-daemon"
-// spawn-at-startup "swaync"
-// spawn-sh-at-startup "vicinae server"
-// spawn-sh-at-startup "delta-shell run"
 
 include "input.kdl"
 include "output.kdl"

@@ -1,5 +1,5 @@
 vim.pack.add({
-	'https://github.com/neovim/nvim-lspconfig',
+    'https://github.com/neovim/nvim-lspconfig',
 	'https://github.com/stevearc/oil.nvim',
 	'https://github.com/folke/which-key.nvim',
 	'https://github.com/nvim-lua/plenary.nvim',
@@ -19,8 +19,8 @@ vim.pack.add({
 -- vim.pack.update()
 
 vim.lsp.config('rust-analyzer', {
-	cmd = {'rust-analyzer'},
-	filetypes = {'rust'},
+    cmd = {'rust-analyzer'},
+    filetypes = {'rust'},
 })
 vim.lsp.enable('rust-analyzer')
 
@@ -118,6 +118,7 @@ local options = {
 	autoindent = false,
 	tabstop = 4, --visual width of tab
 	shiftwidth = 4,
+	expandtab = true,
 	termguicolors = true,
 	ignorecase = true, --ignore case while searching
 	smartcase = true, --but do not ignore if caps are used

@@ -36,3 +36,5 @@
 ;;(set-frame-name "Emacs at Garmond")
 (setq-default frame-title-format (concat "%b - Emacs at " system-name))
 
+;; override theme
+(set-background-color "black")

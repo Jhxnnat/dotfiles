@@ -14,7 +14,7 @@
 	 "/home/jhxnt/Documentos/org/cheat-set.org"
 	 "/home/jhxnt/Documentos/org/school.org"
 	 "/home/jhxnt/Documentos/org/chores.org"))
- '(package-selected-packages '(anti-zenburn-theme zenburn-theme)))
+ '(package-selected-packages '(anti-zenburn-theme zenburn-theme gruvbox-theme)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -22,6 +22,7 @@
  ;; If there is more than one, they won't work right.
  )
 
-(load-theme 'zenburn t)
+;;(load-theme 'zenburn t)
+(load-theme 'gruvbox t)
 
 (load-file custom-file)

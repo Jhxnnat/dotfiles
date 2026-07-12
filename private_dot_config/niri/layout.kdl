@@ -90,8 +90,8 @@ layout {
         // off
 		on
 
-        width 1
-        active-color "#555555"
+        width 2
+        active-color "#d81860"
         inactive-color "#444444"
 
         // Color of the border around windows that request your attention.

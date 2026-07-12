@@ -1,10 +1,10 @@
 {
     "layer": "top",
-    "position": "top",
-    "height": 32,
+    "position": "bottom",
+    "height": 26,
     "modules-left": ["niri/workspaces"],
 	"modules-center": ["mpris"],
-    "modules-right": ["privacy", "custom/run", "wireplumber", "battery", "clock"],
+    "modules-right": ["privacy", "idle_inhibitor", "wireplumber", "battery", "clock"],
 	"custom/run": {
 		"format": "   ",
 		"on-click": "pkill -x rofi || rofi -show drun",
@@ -14,7 +14,7 @@
 		"format": "{value}"
 	},
 	"niri/window": {
-		"format": "{app_id}",
+		"format": "[]={app_id}",
 		"rewrite": {
 			"(.*)Cine": "Cine",
 			"(.*)obsidian": "Obsidian",
@@ -45,10 +45,10 @@
 		"locale": "es_CO.UTF-8"
     },
     "idle_inhibitor": {
-        "format": "{icon}",
+        "format": "Caffeine: {icon}",
         "format-icons": {
-            "activated": "󰅶 ",
-            "deactivated": "󰾪 "
+            "activated": "[Active]",
+            "deactivated": "[Disabled]"
         }
     },
 	"cpu": {
@@ -78,9 +78,9 @@
             "critical": 10
         },
         "interval": 10,
-        "format": "<span face='FontAwesome'>{icon}</span>  {capacity:02}%",
-        "format-charging": " ",
-        "format-icons": ["", "", "", "", ""],
+        "format": "BAT: {capacity:02}%",
+        "format-charging": "[^] {capacity:02}%",
+        "format-icons": ["|E|", "|_|", "|-|", "|=|", "|F|"],
 		"tooltip-format": "{capacity:02}% {power:0.1f}W"
     },
 	"network": {
