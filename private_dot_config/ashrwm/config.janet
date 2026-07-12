@@ -53,12 +53,12 @@
 # mod4 = Super/Windows key
 # mod1 = Alt key
 (set (config :xkb-bindings)
-     @[[:space {:mod4 true} (action/spawn ["kitty"])]
+     @[[:Return {:mod4 true} (action/spawn ["kitty"])]
        [:l {:mod4 true} (action/spawn ["fuzzel"])]
-       [:u {:mod4 true :mod1 true} (action/close)]
+       [:q {:mod4 true} (action/close)]
        [:r {:mod4 true} (action/config)]
-       [:e {:mod4 true} (action/focus :prev)]
-       [:a {:mod4 true} (action/focus :next)]
+       [:a {:mod4 true} (action/focus :prev)]
+       [:e {:mod4 true} (action/focus :next)]
        [:h {:mod4 true} (action/focus-output)]
        [:i {:mod4 true} (action/focus-output)]
        [:t {:mod4 true} (action/fullscreen)]

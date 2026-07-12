@@ -92,17 +92,16 @@ PanelWindow {
         font.pointSize: 12
         anchors.right: battery.left
         anchors.verticalCenter: parent.verticalCenter
-        readonly property string sufix: "% | "
+        readonly property string sufix: " | "
         readonly property string prefix: "Vol: "
 
-        /*
-        PwNode node (defaultAudioSink)
-        PwObjectTracker { objects: [node] }
-        nodeList: Pipewire.nodes.values.filter(n => n.audio && !n.isStream && n.isSink == node.isSink)
-        */
-
+        property PwNode node: Pipewire.defaultAudioSink
+        PwObjectTracker { objects: [volume.node] }
         function set_text(): string {
-            return prefix + Pipewire.defaultAudioSink.audio.volume + sufix
+          if (node.audio.muted) {
+            return "Silent" + sufix
+          }
+          return prefix + Math.round(node.audio.volume*100) + "%" + sufix
         }
         text: set_text()
       }

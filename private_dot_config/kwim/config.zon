@@ -84,6 +84,6 @@
     //              }
     //          }
     .xkb_keyboard_rules = .{
-       .{ .layout = .{ .name = "la-latin" } }
+       .{ .layout = .{ .name = "la-latin1" } }
     }
 }
