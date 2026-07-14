@@ -29,3 +29,8 @@ overview {
 include "rules.kdl"
 include "binds.kdl"
 
+environment {
+    DISPLAY ":0"
+}
+
+
