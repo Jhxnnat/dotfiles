@@ -1,8 +1,8 @@
 font=Iosevka NF 11
-background-color=#272245
-text-color=#9D92E0
-border-size=1
-border-color=#484848FF
-border-radius=13
+background-color=#181818
+text-color=#EEBBBB
+border-size=2
+border-color=#d81860
+# border-radius=0
 width=400
-default-timeout=5000
+default-timeout=6000
