@@ -1,5 +1,11 @@
 (setq custom-file "~/.config/emacs/custom.el")
 
+(add-to-list 'load-path "~/.config/emacs/modes/")
+
+;; https://github.com/rexim/simpc-mode
+(require 'simpc-mode)
+(add-to-list 'auto-mode-alist '("\\.[hc]\\(pp\\)?\\'" . simpc-mode))
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
