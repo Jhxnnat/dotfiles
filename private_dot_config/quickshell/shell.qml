@@ -11,8 +11,13 @@ PanelWindow {
         left: true
         right: true
     }
+    margins {
+        bottom: 12
+        left: 12
+        right: 12
+    }
 
-    implicitHeight: 26
+    implicitHeight: 32
 
 Rectangle {
     id: rect_right
@@ -24,6 +29,8 @@ Rectangle {
         right: parent.right
         verticalCenter: parent.verticalCenter
     }
+    border.color: "#444444"
+    border.width: 2
 
     Row {
         id: container_right
@@ -33,6 +40,9 @@ Rectangle {
             right: parent.right
             verticalCenter: parent.verticalCenter
             fill: parent
+            rightMargin: 12
+            bottomMargin: 6
+            topMargin: 6
         }
 
         Text {
