@@ -49,29 +49,20 @@ window-rule {
 //     default-column-width { proportion 0.66667; }
 // }
 
-// Open Firefox maximized
-/- window-rule {
+// Open maximized apps
+window-rule {
     // This app-id regular expression will work for both:
     // - host Firefox (app-id is "firefox")
     // - Flatpak Firefox (app-id is "org.mozilla.firefox")
-    match app-id=r#"firefox$"#
+    match app-id=r#"^org.mozilla.firefox$"#
+	match app-id=r#"^io\.lmms\.LMMS$"#
 	match app-id=r#"^org\.gimp\.GIMP$"#
 	match app-id=r#"^org\.inkscape\.Inkscape$"#
+    match app-id=r#"^de.wwwtech.gitte$"#
     open-maximized true
 	// open-maximized-to-edges true
 }
 
-
-/- window-rule {
-	match app-id=r#"^io\.lmms\.LMMS$"#
-	open-maximized-to-edges true
-}
-
-// Open the Firefox picture-in-picture player as floating by default.
-window-rule {
-    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
-    open-floating true
-}
 
 // block out Secrets from screen capture.
 window-rule {
@@ -84,58 +75,3 @@ window-rule {
     match app-id=r#"^net\.sourceforge\.VMPK$"#
     open-floating true
 }
-
-window-rule {
-	match app-id=r#"^io\.github\.jhxnnat\.nochi\.settings$"#
-	open-floating true
-}
-
-window-rule {
-	match app-id=r#"^me\.jhx\.anotado$"#
-	open-floating true
-}
-
-blur {
-	// off
-	passes 5
-	offset 5
-	noise 0.02
-	saturation 1.6
-}
-
-// blur stuff behind Alacritty
-// window-rule {
-//     match app-id="^Alacritty$"
-//
-//     background-effect {
-//         blur true
-//     }
-// }
-//
-// // blur behind fuzzel
-// layer-rule {
-//     match namespace="^rofi$"
-//
-//     background-effect {
-//         blur true
-//     }
-// }
-
-
-// waybar blur
- layer-rule {
-     match namespace="^waybar$"
-
-     background-effect {
-         blur true
-     }
- }
-
- // rofi blur
- layer-rule {
-     match namespace="^rofi$"
-
-     background-effect {
-         blur true
-     }
- }
