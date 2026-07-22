@@ -10,6 +10,9 @@
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
 (menu-bar-mode -1)
+(blink-cursor-mode -1)
+(which-key-mode t)
+;;(context-menu-mode)
 
 (set-face-attribute 'default nil
 		    :font "Iosevka NF"
@@ -37,4 +40,4 @@
 (setq-default frame-title-format (concat "%b - Emacs at " system-name))
 
 ;; override theme
-(set-background-color "black")
+;;(set-background-color "black")
