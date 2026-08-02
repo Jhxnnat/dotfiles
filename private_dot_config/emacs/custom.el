@@ -1,43 +1,25 @@
-
-(setq backup-directory-alist
-      `((".*" . , temporary-file-directory)))
-(setq auto-save-file-name-transforms
-      `((".*", temporary-file-directory t)))
-
-(setq create-lockfiles nil)
-
-
-(scroll-bar-mode -1)
-(tool-bar-mode -1)
-(menu-bar-mode -1)
-(blink-cursor-mode -1)
-(which-key-mode t)
-;;(context-menu-mode)
-
-(set-face-attribute 'default nil
-		    :font "Iosevka NF"
-		    :height 120)
-
-(setq-default indent-tabs-mode nil)
-(setq tab-stop-list nil)
-(setq-default tab-width 4)
-(setq-default inhibit-splash-screen t)
-
-(global-display-line-numbers-mode)
-
-;; cool shit (?
-(ido-mode 1)
-(ido-everywhere 1)
-
-(global-set-key (kbd "C-,") 'duplicate-line)
-
-;; org stuff
-(global-set-key (kbd "C-c l") #'org-store-link)
-(global-set-key (kbd "C-c a") #'org-agenda)
-(global-set-key (kbd "C-c c") #'org-capture)
-
-;;(set-frame-name "Emacs at Garmond")
-(setq-default frame-title-format (concat "%b - Emacs at " system-name))
-
-;; override theme
-;;(set-background-color "black")
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-enabled-themes nil)
+ '(custom-safe-themes
+   '("98d928cf8ab22cab78b7f086f1bd0f2287e675679b71103fa5dd3cb0f2587685"
+     "c7fd1708e08544d1df2cba59b85bd25263180b19b287489d4f17b9118487e718"
+     "851da27a89bcef42d165e29012ef43a0392b78544095aea36e42d4486f6a74fc"
+     default))
+ '(org-agenda-files
+   '("~/Documentos/org/code.org"
+     "/home/jhxnt/Documentos/org/cheat-set.org"
+     "/home/jhxnt/Documentos/org/school.org"
+     "/home/jhxnt/Documentos/org/chores.org"))
+ '(package-selected-packages
+   '(anti-zenburn-theme consult corfu gruvbox-theme marginalia
+                        markdown-mode treemacs vertico zenburn-theme)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
