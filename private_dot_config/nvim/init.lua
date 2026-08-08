@@ -14,6 +14,7 @@ vim.pack.add({
 	'https://github.com/hrsh7th/cmp-cmdline',
 	'https://github.com/hrsh7th/nvim-cmp',
 	'https://github.com/goolord/alpha-nvim',
+    'https://github.com/loctvl842/monokai-pro.nvim',
 })
 
 -- vim.pack.update()
@@ -23,8 +24,9 @@ vim.lsp.config('rust-analyzer', {
     filetypes = {'rust'},
 })
 vim.lsp.enable('rust-analyzer')
-
 vim.diagnostic.config({ virtual_text = true })
+
+require("monokai-pro").setup()
 
 require("alpha").setup(require("alpha.themes.dashboard").config)
 require("nvim-autopairs").setup {}
@@ -180,8 +182,8 @@ map("n", "<C-right>", ":vertical resize +2<CR>")
 vim.api.nvim_set_keymap("n", "k", "v:count == 0 ? 'gk' : 'k'", { noremap = true, expr = true, silent = true })
 vim.api.nvim_set_keymap("n", "j", "v:count == 0 ? 'gj' : 'j'", { noremap = true, expr = true, silent = true })
 
-vim.cmd.colorscheme("retrobox")
-vim.cmd.highlight("Normal guibg=#000000")
+vim.cmd.colorscheme("monokai-pro")
+-- vim.cmd.highlight("Normal guibg=#000000")
 
 if vim.g.neovide then
 	-- vim.g.neovide_floating_corner_radius = 1.0
