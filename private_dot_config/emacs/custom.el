@@ -16,7 +16,8 @@
      "/home/jhxnt/Documentos/org/chores.org"))
  '(package-selected-packages
    '(anti-zenburn-theme consult corfu gruvbox-theme marginalia
-                        markdown-mode treemacs vertico zenburn-theme)))
+                        markdown-mode projectile treemacs vertico
+                        zenburn-theme)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

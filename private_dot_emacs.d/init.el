@@ -28,6 +28,18 @@
         ("M-0" . treemacs-select-window)
         ("C-x t t" . treemacs)))
 
+(use-package consult
+  :bind (
+         ("C-c M-x" . consult-mode-command)
+         ("M-g r" . consult-grep-match)
+         ("M-s f" . consult-fd)
+         ("M-s g" . consult-grep)
+         ("M-s r" . consult-ripgrep))
+  :init)
+
+(projectile-mode +1)
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+
 (setq backup-directory-alist
       `((".*" . , temporary-file-directory)))
 (setq auto-save-file-name-transforms
@@ -54,7 +66,7 @@
 (global-display-line-numbers-mode)
 
 ;; cool shit (?
-(ido-mode 1)
+;; (ido-mode 1)
 ;; (ido-everywhere 1)
 
 (global-set-key (kbd "C-,") 'duplicate-line)

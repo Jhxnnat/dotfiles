@@ -7,8 +7,11 @@ mouse-hide-while-typing = true
 copy-on-select = false
 confirm-close-surface = false
 
-theme = Hurtado
+# theme = Monokai Pro
 
 window-theme = ghostty
+
+# to fix little issue with vim cursor
+cursor-text = #000000
 
 

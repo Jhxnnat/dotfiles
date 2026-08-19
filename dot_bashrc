@@ -43,8 +43,17 @@ fi
 if [ -d ]; then
 	PATH="$HOME/.cargo/bin:$PATH"
 fi
+. "$HOME/.cargo/env"
 
 # helix build
-export HELIX_RUNTIME=~/code/compiled/helix/runtime
+# export HELIX_RUNTIME=~/code/compiled/helix/runtime
 
-. "$HOME/.cargo/env"
+# Brew
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"
+
+# plan9port shit
+PLAN9=$HOME/src/plan9port
+export PLAN9
+PATH=$PATH:$PLAN9/bin
+export PATH
+
