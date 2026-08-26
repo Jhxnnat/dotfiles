@@ -51,9 +51,3 @@ fi
 # Brew
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"
 
-# plan9port shit
-PLAN9=$HOME/src/plan9port
-export PLAN9
-PATH=$PATH:$PLAN9/bin
-export PATH
-
