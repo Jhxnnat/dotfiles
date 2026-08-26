@@ -1,6 +1,6 @@
 // https://yalter.github.io/niri/Configuration:-Window-Rules
 
-/-window-rule {
+window-rule {
     geometry-corner-radius 13
     clip-to-geometry true
 }
@@ -74,4 +74,12 @@ window-rule {
 window-rule {
     match app-id=r#"^net\.sourceforge\.VMPK$"#
     open-floating true
+}
+
+// Enable blur behind the fuzzel launcher.
+/-layer-rule {
+    match namespace="^quickshell$"
+    background-effect {
+        blur true
+    }
 }

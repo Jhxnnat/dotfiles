@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 (setq custom-file "~/.config/emacs/custom.el")
 (load-file custom-file)
 
@@ -9,7 +10,7 @@
 (add-to-list 'auto-mode-alist '("\\.[hc]\\(pp\\)?\\'" . simpc-mode))
 
 ;; packages
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+;; (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (use-package vertico
   :init
   (vertico-mode))

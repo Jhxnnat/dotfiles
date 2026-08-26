@@ -5,35 +5,28 @@ import Quickshell.Services.UPower
 import Quickshell.Services.Pipewire
 import Quickshell.Services.Mpris
 
-// TODO: rename Volume.qml to Audio.qml
-
 PanelWindow {
     color: "transparent"
     anchors {
-        bottom: true
+        top: true
         left: true
         right: true
     }
-    margins {
-        bottom: 12
-        left: 12
-        right: 12
-    }
 
-    implicitHeight: 32
+    implicitHeight: 26
 
     Rectangle {
         id: rect_right
         height: parent.height
-        color: "black"
+        color: "#88ffffff" // ARGB btw
 
         anchors {
             left: parent.left
             right: parent.right
             verticalCenter: parent.verticalCenter
         }
-        border.color: "#444444"
-        border.width: 2
+        // border.color: "#444444"
+        // border.width: 1
 
         Row {
             id: container_right
@@ -45,8 +38,8 @@ PanelWindow {
                 fill: parent
                 rightMargin: 12
                 leftMargin: 12
-                bottomMargin: 6
-                topMargin: 6
+                bottomMargin: 2
+                topMargin: 2
             }
 
             Clock {
