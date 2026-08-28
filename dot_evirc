@@ -1,6 +1,8 @@
+"TODO grep search
+
 syntax on
 set background=dark
-colorscheme retrobox
+colorscheme lunaperche
 set termguicolors
 hi Normal guibg=#000000
 
@@ -30,3 +32,28 @@ vnoremap <down> :m '>+1<CR>gv=gv
 vnoremap <up> :m '<-2<CR>gv=gv
 
 nnoremap <leader>x :!chmod +x %<cr>
+
+" fzy 
+function! FzyCommand(choice_command, vim_command)
+    try
+        let output = system(a:choice_command . " | fzy ")
+    catch /Vim:Interrupt/
+        " Swallow errors from ^C, allow redraw! below
+    endtry
+    redraw!
+    if v:shell_error == 0 && !empty(output)
+        exec a:vim_command . ' ' . output
+    endif
+endfunction
+
+nnoremap <leader>f :call FzyCommand("find . -type f", ":e")<cr>
+nnoremap <leader>v :call FzyCommand("find . -type f", ":vs")<cr>
+nnoremap <leader>s :call FzyCommand("find . -type f", ":sp")<cr>
+
+" netrw
+let g:netrw_keepdir = 0 " keep curr dir and browsing dir synced
+let g:netrw_winsize = 30 " size web split (%)
+let g:netrw_banner = 0 " no banner ('I' to show)
+let g:netrw_localcopydircmd = 'cp -r' " change copy command, now recursive
+nnoremap <leader>e :Lexplore %:p:h<CR>
+nnoremap <Leader>ae :Lexplore<CR>
