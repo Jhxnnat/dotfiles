@@ -10,7 +10,10 @@
 (add-to-list 'auto-mode-alist '("\\.[hc]\\(pp\\)?\\'" . simpc-mode))
 
 ;; packages
-;; (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+(package-initialize)
+
 (use-package vertico
   :init
   (vertico-mode))
@@ -37,6 +40,20 @@
          ("M-s g" . consult-grep)
          ("M-s r" . consult-ripgrep))
   :init)
+
+(use-package doom-themes
+  :ensure t
+  :custom
+  (doom-themes-enable-bold t)
+  (doom-themes-enable-italic t)
+
+  (doom-themes-treemacs-theme "doom-colors") ; use "doom-colors" for less minimal icon theme
+  :config
+  (load-theme 'doom-laserwave t)
+
+  (doom-themes-visual-bell-config)
+  (doom-themes-treemacs-config)
+  (doom-themes-org-config))
 
 (projectile-mode +1)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
@@ -65,6 +82,7 @@
 (which-key-mode t)
 ;;(context-menu-mode)
 (global-display-line-numbers-mode)
+(global-tab-line-mode t)
 
 ;; cool shit (?
 ;; (ido-mode 1)
@@ -80,4 +98,4 @@
 ;;(set-frame-name "Emacs at Garmond")
 (setq-default frame-title-format (concat "%b - Emacs at " system-name))
 
-(load-theme 'monokai-pro t)
+;; (load-theme 'monokai-pro t)
