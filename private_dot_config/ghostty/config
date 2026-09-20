@@ -7,7 +7,7 @@ mouse-hide-while-typing = true
 copy-on-select = false
 confirm-close-surface = false
 
-# theme = Monokai Pro
+theme = Blue Berry Pie
 
 window-theme = ghostty
 

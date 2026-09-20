@@ -39,6 +39,10 @@ if [ -d "$HOME/code/bin" ]; then
 	PATH="$HOME/code/bin:$PATH"
 fi
 
+if [ -d "$HOME/.local/share/gem/ruby/3.4.0/bin" ]; then
+    PATH="$PATH:$HOME/.local/share/gem/ruby/3.4.0/bin"
+fi
+
 # Cargo
 if [ -d ]; then
 	PATH="$HOME/.cargo/bin:$PATH"

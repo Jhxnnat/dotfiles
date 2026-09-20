@@ -4,6 +4,10 @@
 #
 # Read `man 5 sway` for a complete reference.
 
+gaps inner 12
+
+default_border pixel 1
+
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
@@ -22,7 +26,7 @@ set $term alacritty
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 # output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-output * bg /home/jhxnt/Imágenes/wallpapers/Fisherman_s_Cottage_at_Varengeville.jpg fill
+output * bg /home/jhxnt/Imágenes/wallpapers/zyto.JPG fill
 #
 # Example configuration:
 #
@@ -245,7 +249,7 @@ bar {
 
     colors {
         statusline #ffffff
-        background #000000
+        background #323232
         inactive_workspace #323232 #323232 #5c5c5c
     }
 }

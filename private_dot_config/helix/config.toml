@@ -1,4 +1,4 @@
-theme = "monokaikai"
+# theme = "monokaikai"
 
 [editor]
 bufferline = "multiple"

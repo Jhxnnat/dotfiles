@@ -17,12 +17,42 @@
 (use-package vertico
   :init
   (vertico-mode))
+
 (use-package marginalia
   :init
   (marginalia-mode))
+
+(use-package orderless
+  :ensure t
+  :custom
+  (completion-styles '(orderless basic))
+  (completion-category-overrides '((file (styles partial-completion))))
+  (completion-pcm-leading-wildcard t))
+
 (use-package corfu
+  :custom
+  (corfu-auto t)
+  :bind
   :init
   (global-corfu-mode))
+
+;; buffer completion
+(orderless-define-completion-style orderless-literal-only
+  (orderless-style-dispatchers nil)
+  (orderless-matching-styles '(orderless-literal)))
+
+(add-hook 'corfu-mode-hook
+          (lambda ()
+            (setq-local completion-styles '(orderless-literal-only basic)
+                        completion-category-overrides nil
+                        completion-category-defaults nil)))
+
+(use-package emacs
+  :custom
+  (tab-always-indent 'complete)
+  (text-mode-ispell-word-completion nil)
+  (read-extended-command-predicate #'command-completion-default-include-p))
+
 (use-package treemacs
   :ensure t
   :defer t
@@ -32,14 +62,23 @@
         ("M-0" . treemacs-select-window)
         ("C-x t t" . treemacs)))
 
+(use-package affe
+  :config
+  (consult-customize affe-grep :preview-key "M-."))
+
 (use-package consult
   :bind (
          ("C-c M-x" . consult-mode-command)
          ("M-g r" . consult-grep-match)
-         ("M-s f" . consult-fd)
-         ("M-s g" . consult-grep)
+         ("M-s f" . affe-find)
+         ("M-s g" . affe-grep)
          ("M-s r" . consult-ripgrep))
   :init)
+
+(defun affe-orderless-regexp-compiler (input _type _ignorecase)
+  (setq input (cdr (orderless-compile input)))
+  (cons input (apply-partially #'orderless--highlight input t)))
+(setq affe-regexp-compiler #'affe-orderless-regexp-compiler)
 
 (use-package doom-themes
   :ensure t
@@ -49,7 +88,7 @@
 
   (doom-themes-treemacs-theme "doom-colors") ; use "doom-colors" for less minimal icon theme
   :config
-  (load-theme 'doom-laserwave t)
+  (load-theme 'doom-tomorrow-day t)
 
   (doom-themes-visual-bell-config)
   (doom-themes-treemacs-config)
@@ -95,7 +134,5 @@
 (global-set-key (kbd "C-c a") #'org-agenda)
 (global-set-key (kbd "C-c c") #'org-capture)
 
-;;(set-frame-name "Emacs at Garmond")
 (setq-default frame-title-format (concat "%b - Emacs at " system-name))
 
-;; (load-theme 'monokai-pro t)
