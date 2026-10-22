@@ -7,11 +7,7 @@ mouse-hide-while-typing = true
 copy-on-select = false
 confirm-close-surface = false
 
-theme = Blue Berry Pie
+theme = dark:Blue Berry Pie,light:Zenbones
 
 window-theme = ghostty
-
-# to fix little issue with vim cursor
-cursor-text = #000000
-
 

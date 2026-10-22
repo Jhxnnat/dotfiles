@@ -23,7 +23,13 @@ vim.lsp.config('rust-analyzer', {
     cmd = {'rust-analyzer'},
     filetypes = {'rust'},
 })
+vim.lsp.config('clangd', {
+    cmd = {'clangd --background-index'},
+    filetypes = {'c', 'cpp'}
+})
+
 vim.lsp.enable('rust-analyzer')
+vim.lsp.enable('clangd')
 vim.diagnostic.config({ virtual_text = true })
 
 require("monokai-pro").setup()
@@ -182,7 +188,7 @@ map("n", "<C-right>", ":vertical resize +2<CR>")
 vim.api.nvim_set_keymap("n", "k", "v:count == 0 ? 'gk' : 'k'", { noremap = true, expr = true, silent = true })
 vim.api.nvim_set_keymap("n", "j", "v:count == 0 ? 'gj' : 'j'", { noremap = true, expr = true, silent = true })
 
-vim.cmd.colorscheme("monokai-pro")
+vim.cmd.colorscheme("lunaperche")
 -- vim.cmd.highlight("Normal guibg=#000000")
 
 if vim.g.neovide then
