@@ -1,4 +1,10 @@
 ;; -*- lexical-binding: t; -*-
+
+;; TODO 
+;; whitespace-mode
+;; hl-todo
+;; 
+
 (setq custom-file "~/.config/emacs/custom.el")
 (load-file custom-file)
 

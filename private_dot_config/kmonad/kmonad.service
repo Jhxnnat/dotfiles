@@ -1,10 +1,10 @@
 [Unit]
-Description=KMonad keybaord config
+Description=KMonad laptop keybaord config
 
 [Service]
 Restart=always
 RestartSec=3
-ExecStart=bash /etc/kmonad/kmonad_script_external.sh
+ExecStart=kmonad %h/.config/kmonad/kmonad.kbd
 Nice=-20
 
 [Install]

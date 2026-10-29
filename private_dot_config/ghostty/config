@@ -11,3 +11,4 @@ theme = dark:Blue Berry Pie,light:Zenbones
 
 window-theme = ghostty
 
+gtk-titlebar-style = tabs
